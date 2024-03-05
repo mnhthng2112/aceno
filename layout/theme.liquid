@@ -4,7 +4,6 @@
         {{ "style.css" | asset_url | stylesheet_tag }}
     </head>
     <body>
-        {% comment %} {% render 'header-' %} {% endcomment %}
         {{ content_for_layout }}
         {{ "script.js" | asset_url | script_tag }}
     </body>
