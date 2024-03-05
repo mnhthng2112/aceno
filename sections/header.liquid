@@ -29,9 +29,9 @@
                         {% assign handle = settings.menu %}
                             {% case handle %}
                             {% when "mega_menu_1" %}
-                                {}
-                            {% when "mega_menu_1" %}
-                                This is a cookie
+                                {% section 'mega-menu-1' %}
+                            {% when "mega_menu_2" %}
+                                {% section 'mega-menu-1' %}
                             {% else %}
                                 This is not a cake nor a cookie
                         {% endcase %}
