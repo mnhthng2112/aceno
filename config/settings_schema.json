@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "name": "menu-type",
+    "settings": [
+      {
+        "type": "radio",
+        "id": "menu",
+        "label": "mega menu",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "centered",
+            "label": "Centered"
+          }
+        ],
+        "default": "left"
+      }
+    ]
+  }
+]
