@@ -1,7 +1,7 @@
 {
   "section": {
     "main": {
-      "type": "Header"
+      "type": "header"
     },
     "order": [
       "main"
