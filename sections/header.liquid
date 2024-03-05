@@ -27,13 +27,13 @@
                             </span>
                         </a>
                         {{ settings.menu }}
-                        {% assign handle = settings.menu %}
+                        {% comment %} {% assign handle = settings.menu %}
                             {% case handle %}
                             {% when "mega_menu_1" %}
                                 {% section 'mega-menu-1' %}
                             {% when "mega_menu_2" %}
                                 {% section 'mega-menu-1' %}
-                        {% endcase %}
+                        {% endcase %} {% endcomment %}
                     </li>
                     {%- endfor %}
                 </ul>
