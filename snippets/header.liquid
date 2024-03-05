@@ -14,7 +14,7 @@
             <ul class="gen-menu">
                 {% for link in linklists.main-menu.links -%}
                     <li class="gen-menu__item gen-menu__item--parent gen-menu__item--mega">
-                    <a href="#" class="gen-menu__link--main">
+                    <a href="{{ url }}" class="gen-menu__link--main">
                         {{ link.title | link_to: link.url }}
                         <span class="gen-menu__arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="11"
