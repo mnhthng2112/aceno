@@ -5,6 +5,7 @@
     </head>
     <body>
         {{ content_for_layout }}
+        {% render 'header' %}
         {{ "script.js" | asset_url | script_tag }}
     </body>
 </html>
