@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html>
     <head>
         {{ content_for_header }}
@@ -25,32 +24,4 @@
         },
         effect: 'fade'
     });
-=======
-<html>
-    <head>
-        {{ content_for_header }}
-        {{ "style.css" | asset_url | stylesheet_tag }}
-        {{ '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' | stylesheet_tag }}
-    </head>
-    <body>
-        {% section 'header' %}
-        {{ content_for_layout }}
-        {{ '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js' | script_tag }}
-        {{ "script.js" | asset_url | script_tag }}
-    </body>
-</html>
-
-<script>
-    const swiper_1 = new Swiper('.gen-swiper-banner', {
-        loop: true,
-        autoplay: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            bulletClass: "gen-dot",
-            bulletActiveClass: "gen-dot--active"
-        },
-        effect: 'fade'
-    });
->>>>>>> 0775a78b2c1f8f4ad647e5cde4048384197486a5
 </script>
