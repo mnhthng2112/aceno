@@ -2,6 +2,9 @@
   "section": {
     "main": {
       "type": "Header"
-    }
+    },
+    "order": [
+      "main"
+    ]
   }
 }
