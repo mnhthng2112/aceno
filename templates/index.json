@@ -4,9 +4,15 @@
       "type": "header",
       "settings": {
       }
+    },
+    "mega-menu": {
+      "type": "mega-menu-1",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "mega-menu"
   ]
 }
