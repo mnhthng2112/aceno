@@ -27,10 +27,9 @@
                             </span>
                         </a>
                         {% comment %} {{ settings.menu }} {% endcomment %}
-                        {% assign handle = settings.menu %}
-                            {% case handle %}
+                        {% case settings.menu %}
                             {% when "mega_menu_1" %}
-                            fuck
+                                fuck
                                 {% comment %} {% section 'mega-menu-1' %} {% endcomment %}
                             {% when "mega_menu_2" %}
                                 you
