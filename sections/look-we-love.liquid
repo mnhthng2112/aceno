@@ -11,8 +11,8 @@
     <figure
         class="gen-custom-layout__main-img gen-observed gen-fadeInUp"
         data-delay="100" style="--aspect-ratio: 1">
-        <img src="{{ 'love-we-look-img-1.jpg' | asset_url }} " alt>
-        {{ 'love-we-look-img-1.jpg' | asset_url }} 
+        <img src=" " alt>
+        <img src="{% if section.settings.lable_image == blank %} {{ 'love-we-look-img-1.jpg' | asset_url }} {% else %} {{ section.settings.lable_image | image_url }} {% endif %}" alt=""/>
     </figure>
     <div class="gen-custom-layout__content">
         <div class="gen-custom-layout__content-inner">
