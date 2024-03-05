@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "banner",
+      "settings": {
+      }
+    },
+    "card-lable": {
+      "type": "card-lable",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main", "card-lable"
+  ]
