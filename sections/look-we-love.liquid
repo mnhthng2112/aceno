@@ -19,6 +19,7 @@
                 data-delay="200"
                 src="{{ 'love-we-look-watermark.png' | asset_url }}" alt
                 width="144">
+                <img src="{% if section.settings.lable_image == blank %} {{ 'love-we-look-img-1.jpg' | asset_url }} {% else %}{{ section.settings.lable_image | image_url }}{% endif %}" alt=""/>
             <figure
                 class="gen-custom-layout__sub-img gen-observed gen-fadeInUp"
                 data-delay="300" style="--aspect-ratio: 0.8">
