@@ -13,10 +13,7 @@
         <!-- Main menu -->
             <ul class="gen-menu">
                 {% for link in linklists.main-menu.links -%}
-                    {{ link.title | link_to: link.url }}
-                {%- endfor %}
-            <li
-                class="gen-menu__item gen-menu__item--parent gen-menu__item--mega">
+                            <li class="gen-menu__item gen-menu__item--parent gen-menu__item--mega">
                 <a href="#" class="gen-menu__link--main">
                 Home
                 <span class="gen-menu__arrow">
@@ -104,6 +101,9 @@
                 </div>
                 </div>
             </li>
+                    {{ link.title | link_to: link.url }}
+                {%- endfor %}
+
             <li
                 class="gen-menu__item gen-menu__item--parent gen-menu__item--mega">
                 <a href="#" class="gen-menu__link--main">
