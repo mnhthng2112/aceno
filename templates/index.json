@@ -1,18 +1,12 @@
 {
   "sections": {
     "main": {
-      "type": "header",
-      "settings": {
-      }
-    },
-    "mega-menu": {
-      "type": "mega-menu-1",
+      "type": "banner",
       "settings": {
       }
     }
   },
   "order": [
-    "main",
-    "mega-menu"
+    "main"
   ]
 }
