@@ -13,7 +13,7 @@
             <!-- Main menu -->
                 <ul class="gen-menu">
                     {% for link in linklists.main-menu.links -%}
-                        <li class="gen-menu__item gen-menu__item--parent {% if settings.menu == "mega_menu_4" %}gen-menu__item--dropdown  {% endif %}">
+                        <li class="gen-menu__item gen-menu__item--parent {% if settings.menu == "mega_menu_4" %} gen-menu__item--dropdown {else} gen-menu__item--mega {% endif %}">
                         <a href="{{ link.url }}" class="gen-menu__link--main">
                             {{ link.title }}
                             <span class="gen-menu__arrow">
