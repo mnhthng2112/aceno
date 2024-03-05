@@ -10,6 +10,10 @@
         </div>
         <div class="gen-header__center">
         <div class="gen-header__menu">
+        <!-- Main menu -->
+            {% for link in linklists.main-menu.links -%}
+            {{ link.title | link_to: link.url }}
+            {%- endfor %}
             <ul class="gen-menu">
             <li
                 class="gen-menu__item gen-menu__item--parent gen-menu__item--mega">
