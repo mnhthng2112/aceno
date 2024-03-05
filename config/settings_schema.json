@@ -8,15 +8,23 @@
         "label": "mega menu",
         "options": [
           {
-            "value": "left",
-            "label": "Left"
+            "value": "mega_menu_1",
+            "label": "mega_menu_1"
           },
           {
-            "value": "centered",
-            "label": "Centered"
+            "value": "mega_menu_2",
+            "label": "mega_menu_2"
+          },
+          {
+            "value": "mega_menu_3",
+            "label": "mega_menu_3"
+          },
+          {
+            "value": "mega_menu_4",
+            "label": "mega_menu_4"
           }
         ],
-        "default": "left"
+        "default": "mega_menu_1"
       }
     ]
   }
