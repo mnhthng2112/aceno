@@ -5,8 +5,8 @@
         {{ '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' | stylesheet_tag }}
     </head>
     <body>
-        {{ content_for_layout }}
         {% section 'header' %}
+        {{ content_for_layout }}
         {{ '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js' | script_tag }}
         {{ "script.js" | asset_url | script_tag }}
     </body>
