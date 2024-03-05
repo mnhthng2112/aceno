@@ -4,9 +4,15 @@
       "type": "banner",
       "settings": {
       }
+    },
+    "card-label": {
+      "type": "card-label",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "card-label"
   ]
 }
