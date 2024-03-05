@@ -8,17 +8,25 @@
     "card-lable": {
       "type": "card-lable",
       "settings": {
+        "footer_linklist_title": "Quick links"
       }
     },
     "look-we-love": {
       "type": "look-we-love",
       "settings": {
       }
+    },
+    "custom_section_3yAAyR": {
+      "type": "custom-section",
+      "settings": {
+        "custom_liquid": ""
+      }
     }
   },
   "order": [
     "main",
     "card-lable",
-    "look-we-love"
+    "look-we-love",
+    "custom_section_3yAAyR"
   ]
 }

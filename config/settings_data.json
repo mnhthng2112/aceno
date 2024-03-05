@@ -1,0 +1,15 @@
+{
+  "current": {
+    "menu": "mega_menu_1",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
