@@ -9,10 +9,16 @@
       "type": "card-lable",
       "settings": {
       }
+    },
+    "look-we-love": {
+      "type": "look-we-love",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "card-lable"
+    "card-lable",
+    "look-we-love"
   ]
 }
