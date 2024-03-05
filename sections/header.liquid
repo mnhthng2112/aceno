@@ -5,7 +5,6 @@
             <div class="gen-header__logo">
                 <a href="#">
                 <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% else %} {{ section.settings.header_logo | image_url }} {% endif %}" alt>
-                <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% endif %} {{ section.settings.header_logo | img_url: '200x' }}" alt>
                 </a>
             </div>
             </div>
