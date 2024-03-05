@@ -4,7 +4,8 @@
             <div class="gen-header__left">
             <div class="gen-header__logo">
                 <a href="#">
-                <img src="{{ section.settings.header_logo | image_url }}" alt>
+                <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% else %} {{ section.settings.header_logo | image_url }} {% endif %}" alt>
+                <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% endif %} {{ section.settings.header_logo | img_url: '200x' }}" alt>
                 </a>
             </div>
             </div>
@@ -781,14 +782,20 @@
 </header>
 
 {% schema %}
-{
+    {
     "name": "Header",
     "settings": [
-        {
-        "type": "image_picker",
-        "id": "header_logo",
-        "label": "Logo"
-        }
+    {
+    "type": "image_picker",
+    "id": "header_logo",
+    "label": "Logo"
+    },
+    {
+    "type": "link_list",
+    "id": "header_menu",
+    "default": "main-menu",
+    "label": "Menu"
+    }
     ]
-}
+    }
 {% endschema %}
