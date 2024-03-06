@@ -780,6 +780,17 @@
     </div>
 </header>
 
+<section>
+if (Shopify.designMode) {
+document.addEventListener('shopify:section:load', function(event) {
+    const header = document.querySelector('m-header');
+    if (typeof Megamenu !== 'undefined' && header) {
+    const megaMenu = new Megamenu(header);
+    }
+});
+}
+</section>
+
 {% schema %}
 {
     "name": "Header",
