@@ -4,11 +4,11 @@
     <div class="gen-container--fluid">
         <div class="gen-header__inner">
             <div class="gen-header__left">
-            <div class="gen-header__logo">
-                <a href="#">
-                <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% else %} {{ section.settings.header_logo | image_url }} {% endif %}" alt>
-                </a>
-            </div>
+                <div class="gen-header__logo">
+                    <a href="#">
+                        <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% else %} {{ section.settings.header_logo | image_url }} {% endif %}" alt>
+                    </a>
+                </div>
             </div>
             <div class="gen-header__center">
                 <div class="gen-header__menu">
