@@ -1,8 +1,9 @@
-{% assign heading = section.block.settings.heading %}
+{% comment %} {% assign heading = section.block.settings.heading %}
 
-{% comment %} {% if heading %} {% endcomment %}
+{% if heading %} {% endcomment %}
 
 <div class="gen-mega-menu">
+    <div>{{}}</div>
     {% case settings.menu %}
     {% when 'mega_menu_1' %}
         <div class="gen-mega-menu__container gen-container--fluid">
