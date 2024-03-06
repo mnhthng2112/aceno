@@ -6,6 +6,7 @@
     </head>
     <body>
         {% section 'header-minimog' %}
+        {% section 'header' %}
         {{ content_for_layout }}
         {{ '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js' | script_tag }}
         {{ "script.js" | asset_url | script_tag }}
