@@ -1,698 +1,37 @@
+{% assign heading = section.settings.heading %}
+
 <header class="gen-header gen-header--overlap gen-header--white">
     <div class="gen-container--fluid">
         <div class="gen-header__inner">
             <div class="gen-header__left">
-            <div class="gen-header__logo">
-                <a href="#">
-                <img src="{{ 'logo.svg' | asset_url }}" alt>
-                </a>
-            </div>
+                <div class="gen-header__logo">
+                    <a href="#">
+                        <img src="{% if section.settings.header_logo == blank %} {{ 'logo.svg' | asset_url }} {% else %} {{ section.settings.header_logo | image_url }} {% endif %}" alt>
+                    </a>
+                </div>
             </div>
             <div class="gen-header__center">
-            <div class="gen-header__menu">
-            <!-- Main menu -->
-                <ul class="gen-menu">
-                    {% for link in linklists.main-menu.links -%}
-                        <li class="gen-menu__item gen-menu__item--parent {% if settings.menu == "mega_menu_4" %} gen-menu__item--dropdown {% else %} gen-menu__item--mega {% endif %}">
-                        <a href="{{ link.url }}" class="gen-menu__link--main">
-                            {{ link.title }}
-                            <span class="gen-menu__arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11"
-                                height="6" viewBox="0 0 11 6" fill="none">
-                                <path d="M1.28003 1L5.28003 5L9.28003 1"
-                                    stroke="#7C99A9" stroke-width="1.5"
-                                    stroke-miterlimit="10" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </a>
-                        <div class="gen-mega-menu">
-                            {% case settings.menu %}
-                            {% when 'mega_menu_1' %}
-                                <div class="gen-mega-menu__container gen-container--fluid">
-                                    <div class="gen-mega-menu__inner gen:w-full">
-                                        <ul
-                                            class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-5 gen:gap-30">
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#">
-                                                <img src="../imgs/homepage-thumb.jpg" alt>
-                                            </a>
-                                            </li>
-                                            <li class="gen:text-center gen:col-span-full">
-                                            <a href="#"
-                                                class="gen-btn gen-btn--dark gen-rounded--full gen-btn--lg">View
-                                                all demos (24)</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            {% when 'mega_menu_2' %}
-                                <div class="gen-mega-menu__container gen-container--fluid">
-                                    <div class="gen-mega-menu__inner">
-                                        <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">shop layout</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Filter left
-                                                    sidebar</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Filter right
-                                                    sidebar</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Canvas
-                                                    sidebar</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Dropdown
-                                                    sidebar</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Grid 2
-                                                    columns</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Grid 3
-                                                    columns</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">List view</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Shop pages</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Collection
-                                                    list</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Collection
-                                                    list 2</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Panigation
-                                                    page</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Load more
-                                                    button</a>
-                                                </li>
-                                                <li class="gen-sub-menu__item">
-                                                <a href="#" class="gen-menu__link">Infinite
-                                                    scrolling</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                        </ul>
-                                        <div class="gen-mega-menu__content">
-                                            <div class="gen:grid gen:grid-cols-3 gen:gap-30">
-                                            <div
-                                                class="gen-collection-card gen-observed gen-fadeInUp">
-                                                <div class="gen-collection-card__inner">
-                                                <a href="#" class="gen-collection-card__img">
-                                                    <figure style="--aspect-ratio: 242/303">
-                                                    <img src="imgs/blazer-header.png" alt>
-                                                    </figure>
-                                                </a>
-                                                <div
-                                                    class="gen-collection-card__info gen-collection-card__info--overlap gen-text-center">
-
-                                                    <div
-                                                    class="gen-collection-card__subtitle gen-text--lg"></div>
-
-                                                    <h3
-                                                    class="gen-collection-card__title gen-text--lg">
-                                                    <a href="#"></a>
-                                                    </h3>
-
-                                                    <a href="#"
-                                                    class="gen-btn gen-btn--white gen-rounded--full gen-btn--sm">Blazers</a>
-                                                </div>
-                                                </div>
-                                            </div> <div
-                                                class="gen-collection-card gen-observed gen-fadeInUp">
-                                                <div class="gen-collection-card__inner">
-                                                <a href="#" class="gen-collection-card__img">
-                                                    <figure style="--aspect-ratio: 242/303">
-                                                    <img src="imgs/underwear-header.png" alt>
-                                                    </figure>
-                                                </a>
-                                                <div
-                                                    class="gen-collection-card__info gen-collection-card__info--overlap gen-text-center">
-
-                                                    <div
-                                                    class="gen-collection-card__subtitle gen-text--lg"></div>
-
-                                                    <h3
-                                                    class="gen-collection-card__title gen-text--lg">
-                                                    <a href="#"></a>
-                                                    </h3>
-
-                                                    <a href="#"
-                                                    class="gen-btn gen-btn--white gen-rounded--full gen-btn--sm">Underwear</a>
-                                                </div>
-                                                </div>
-                                            </div> <ul
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                                <a href="#" class="gen-menu__link">Top rate</a>
-                                                <ul
-                                                    class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                    <li class="gen-sub-menu__product-card">
-                                                    <a href="#"
-                                                        class="gen-sub-menu__product-card-thumb">
-                                                        <figure style="--aspect-ratio: 65/82">
-                                                        <img src="imgs/product-header-1.png"
-                                                            alt>
-                                                        </figure>
-                                                    </a>
-                                                    <div
-                                                        class="gen-sub-menu__product-card-content">
-                                                        <h3
-                                                        class="gen-sub-menu__product-card-title">
-                                                        <a href="#">Frances lady jacket in
-                                                            maritime tweed</a>
-                                                        </h3>
-                                                        <div
-                                                        class="gen-sub-menu__product-card-price">
-                                                        $129.95
-                                                        </div>
-                                                    </div>
-                                                    </li>
-                                                    <li class="gen-sub-menu__product-card">
-                                                    <a href="#"
-                                                        class="gen-sub-menu__product-card-thumb">
-                                                        <figure style="--aspect-ratio: 65/82">
-                                                        <img src="imgs/product-header-2.png"
-                                                            alt>
-                                                        </figure>
-                                                    </a>
-                                                    <div
-                                                        class="gen-sub-menu__product-card-content">
-                                                        <h3
-                                                        class="gen-sub-menu__product-card-title">
-                                                        <a href="#">Slim-fit tuxedo vest in city
-                                                            crepe</a>
-                                                        </h3>
-                                                        <div
-                                                        class="gen-sub-menu__product-card-price">
-                                                        $118.00
-                                                        </div>
-                                                    </div>
-                                                    </li>
-                                                    <li class="gen-sub-menu__product-card">
-                                                    <a href="#"
-                                                        class="gen-sub-menu__product-card-thumb">
-                                                        <figure style="--aspect-ratio: 65/82">
-                                                        <img src="imgs/product-header-3.png"
-                                                            alt>
-                                                        </figure>
-                                                    </a>
-                                                    <div
-                                                        class="gen-sub-menu__product-card-content">
-                                                        <h3
-                                                        class="gen-sub-menu__product-card-title">
-                                                        <a href="#">Cable-knit cardigan
-                                                            sweater</a>
-                                                        </h3>
-                                                        <div
-                                                        class="gen-sub-menu__product-card-price">
-                                                        $138.00
-                                                        </div>
-                                                    </div>
-                                                    </li>
-                                                </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% when 'mega_menu_3' %}
-                                <div class="gen-mega-menu__container gen-container--fluid">
-                                    <div class="gen-mega-menu__inner gen:w-full">
-                                        <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">product
-                                                layout</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">
-                                                    Default layout
-                                                    <span
-                                                    class="gen-menu-badge gen-menu-badge--hot"
-                                                    style="--badge: &quot;hot&quot;;"></span>
-                                                </a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">
-                                                    Full width
-                                                    <span
-                                                    class="gen-menu-badge gen-menu-badge--new"
-                                                    style="--badge: &quot;new&quot;;"></span>
-                                                </a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Full
-                                                    container</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    detail digital</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Default
-                                                    tab</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Tab
-                                                    accordion</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Open all
-                                                    tab</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Tab accordion
-                                                    inner</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">product
-                                                features</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Compare
-                                                    color</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Ask a
-                                                    question</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Pickup
-                                                    available</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Share
-                                                    products</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    pre-orders</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Terms And
-                                                    Conditions</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product left
-                                                    sidebar</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product right
-                                                    sidebar</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    drawer sidebar</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Product
-                                                Details</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Real time
-                                                    visitor</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Buy now
-                                                    button</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Swatch
-                                                    images</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Color
-                                                    swatch</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Text
-                                                    swatch</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Swatch
-                                                    radio</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Swatch
-                                                    dropdown</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Trust
-                                                    badge</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Sticky add to
-                                                    cart</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Thumbnails
-                                                Position</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Thumbnails
-                                                    left</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Thumbnails
-                                                    right</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Thumbnails
-                                                    bottom</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Default
-                                                    thumb</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">No
-                                                    thumbnails</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Grid 1
-                                                    column</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Grid 2
-                                                    column</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Inner zoom
-                                                    1</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Inner zoom
-                                                    2</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">External
-                                                    zoom</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Boot Sale</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Countdown
-                                                    timers</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Stock
-                                                    countdown</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Variant image
-                                                    group</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    sticky</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Frequently
-                                                    bought together</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Advanced
-                                                    Custom Fields</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Size
-                                                    guide</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Dynamic
-                                                    checkout buttons</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Product Types</a>
-                                            <ul
-                                                class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Simple
-                                                    product</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Variable
-                                                    product</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    3d</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    video</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    grouped</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#"
-                                                    class="gen-menu__link">External/Affiliate
-                                                    product</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Product
-                                                    lightbox image</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            {% when 'mega_menu_4' %}
-                                <div class="gen-mega-menu__container">
-                                    <div class="gen-mega-menu__inner">
-                                        <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">
-                                                Blog Post
-                                                <span class="gen-menu__sub-arrow">
-                                                    <svg width="6" height="10" viewBox="0 0 6 10"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 9L5 5L1 1" stroke="#7C99A9"
-                                                        stroke-width="1.5" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                            <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Post
-                                                    Sidebar</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Post One
-                                                    Column</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Post Prallax
-                                                    Image</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Post
-                                                    Sticky</a>
-                                                </li>
-                                                <li
-                                                class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">Post Simple
-                                                    Title</a>
-                                                </li>
-                                            </ul>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Blog Standard</a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Blog Grid</a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Blog Grid mix</a>
-                                            </li>
-                                            <li
-                                            class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Blog List</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            {% endcase %}
-                        </div>
-                    </li>
-                    {%- endfor %}
-                </ul>
-
-                <script>
-                    const menuItemMega = document.querySelectorAll('.gen-menu .gen-menu__item--mega');
-                    const header = document.querySelector('.gen-header');
-                
-                    for (let i = 0; i < menuItemMega.length; i++) {
-                        menuItemMega[i].addEventListener('mouseover', () => {
-                            header.classList.add("gen-mega-active");
-                        });
-                
-                        menuItemMega[i].addEventListener('mouseout', () => {
-                            header.classList.remove("gen-mega-active");
-                        });
-                    }
-                </script> 
+                <div class="gen-header__menu">
+                <!-- Main menu -->
+                    <ul class="gen-menu">
+                        {% for link in linklists.main-menu.links -%}
+                            <li class="gen-menu__item gen-menu__item--parent {% if settings.menu == "mega_menu_4" %} gen-menu__item--dropdown {% else %} gen-menu__item--mega {% endif %}">
+                            <a href="{{ link.url }}" class="gen-menu__link--main">
+                                {{ link.title }}
+                                <span class="gen-menu__arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11"
+                                    height="6" viewBox="0 0 11 6" fill="none">
+                                    <path d="M1.28003 1L5.28003 5L9.28003 1"
+                                        stroke="#7C99A9" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+                            {% render 'header-mega', heading:heading %}
+                        </li>
+                        {%- endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="gen-header__right">
@@ -779,3 +118,68 @@
         </div>
     </div>
 </header>
+
+<script>
+    const menuItemMega = document.querySelectorAll('.gen-menu .gen-menu__item--mega');
+    const header = document.querySelector('.gen-header');
+
+    for (let i = 0; i < menuItemMega.length; i++) {
+        menuItemMega[i].addEventListener('mouseover', () => {
+            header.classList.add("gen-mega-active");
+        });
+
+        menuItemMega[i].addEventListener('mouseout', () => {
+            header.classList.remove("gen-mega-active");
+        });
+    }
+</script> 
+
+{% schema %}
+{
+    "name": "Header",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "header_logo",
+            "label": "Logo"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "mega-menu-1",
+            "name": "style mega menu",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "For item"
+                },
+                {
+                    "type": "radio",
+                    "id": "menu",
+                    "label": "mega menu",
+                    "options": [
+                        {
+                            "value": "mega_menu_1",
+                            "label": "mega menu 1"
+                        },
+                        {
+                            "value": "mega_menu_2",
+                            "label": "mega menu 2"
+                        },
+                        {
+                            "value": "mega_menu_3",
+                            "label": "mega menu 3"
+                        },
+                        {
+                            "value": "mega_menu_4",
+                            "label": "mega menu 4"
+                        }
+                        ],
+                    "default": "mega_menu_1"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

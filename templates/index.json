@@ -5,13 +5,18 @@
       "settings": {
       }
     },
-    "card-lable": {
-      "type": "card-lable",
+    "card-label": {
+      "type": "card-label",
+      "settings": {
+      }
+    },
+    "look-we-love": {
+      "type": "look-we-love",
       "settings": {
       }
     }
   },
   "order": [
-    "main", "card-lable"
+    "main", "card-label", "look-we-love"
   ]
 }
