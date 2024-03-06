@@ -1,4 +1,17 @@
-<m-header class="gen-header gen-header--overlap gen-header--white">
+<m-header 
+data-section-id="{{ section.id }}"
+    data-section-type="header"
+    data-page="{{ request.path | strip }}"
+    data-header-design="{{ section.settings.header_design }}"
+    {% if request.design_mode == true %}
+        data-design-mode="true"
+    {% endif %}
+    class="m-header m:block"
+    data-transparent="{{ transparent_on_top }}"
+    data-sticky="{{ section.settings.header_sticky }}"
+
+    class="gen-header gen-header--overlap gen-header--white"
+>
     <div class="gen-container--fluid">
         <div class="gen-header__inner">
             <div class="gen-header__left">
