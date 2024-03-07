@@ -4,34 +4,6 @@
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "mega_menu_1_ErmYbk": {
-            "type": "mega-menu-1",
-            "settings": {
-              "heading": "sadadasc",
-              "menu": "mega_menu_4"
-            }
-          },
-          "mega_menu_1_AF6GK3": {
-            "type": "mega-menu-1",
-            "settings": {
-              "heading": "thang",
-              "menu": "mega_menu_1"
-            }
-          },
-          "mega_menu_1_AQpQHY": {
-            "type": "mega-menu-1",
-            "settings": {
-              "heading": "",
-              "menu": "mega_menu_1"
-            }
-          }
-        },
-        "block_order": [
-          "mega_menu_1_ErmYbk",
-          "mega_menu_1_AF6GK3",
-          "mega_menu_1_AQpQHY"
-        ],
         "settings": {
           "heading": ""
         }
