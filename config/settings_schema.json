@@ -4,11 +4,10 @@
     "settings": [
       {
         "type": "range",
-        "id": "font_size",
+        "id": "menu_column",
         "min": 1,
         "max": 12,
         "step": 1,
-        "unit": "px",
         "label": "Menu column",
         "default": 5
       }
