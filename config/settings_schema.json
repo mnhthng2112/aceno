@@ -1,3 +1,16 @@
 [
-
+  {
+    "name": "mega menu grid",
+    "settings": [
+      {
+        "type": "range",
+        "id": "font_size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "label": "Font size",
+        "default": 16
+      }
+    ]
+  }
 ]
