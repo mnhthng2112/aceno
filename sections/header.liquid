@@ -40,6 +40,11 @@
                                         {% assign matching_block_found = true %}
                                         {% break %}
                                     {% endif %}
+                                    {% if block.settings.heading == link.title %}
+                                        {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu %}
+                                        {% assign matching_block_found = true %}
+                                        {% break %}
+                                    {% endif %}
                                 {% endfor %}
                                 {% unless matching_block_found %}
                                     {% render 'header-mega' %}
