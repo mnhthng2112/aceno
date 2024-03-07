@@ -35,19 +35,20 @@
                                 </a>
                                 {% assign matching_block_found = false %}
                                 {% for block in section.blocks %}
-                                    {% if block.settings.heading == link.title %}
-                                        {% if block.settings.menu == 'mega_menu_4' %}
-                                        {# Render when mega_menu_4 is selected, including mega_column #}
-                                            {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu, mega_column: block.settings.mega_column  %}
-                                            {% assign matching_block_found = true %}
-                                            {% break %}
-                                        {% else %}
-                                            {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu %}
-                                            {% assign matching_block_found = true %}
-                                            {% break %}
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
+    {% if block.settings.heading == link.title %}
+        {% if block.settings.menu == 'mega_menu_4' %}
+            {# Render when mega_menu_4 is selected, including mega_column #}
+            {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu, mega_column: block.settings.mega_column %}
+            {% assign matching_block_found = true %}
+            {% break %}
+        {% else %}
+            {# Render when any other mega_menu is selected, without mega_column #}
+            {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu %}
+            {% assign matching_block_found = true %}
+            {% break %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
                                 {% unless matching_block_found %}
                                     {% render 'header-mega' %}
                                 {% endunless %}
