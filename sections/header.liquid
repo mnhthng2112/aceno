@@ -32,12 +32,12 @@
                         </li>
                         {%- endfor %}
                         <li>
-                        {% for block in section.blocks %}
-                            {%- case block.type -%}
-                                {%- when "heading" -%}
-                                <h1>{{ block.settings.heading }}</h1>
-                            {% endcase %}
-                        {% endfor %}
+                            {% for block in section.blocks %}
+                                {%- case block.heading -%}
+                                    {%- when "heading" -%}
+                                    <h1>{{ block.settings.heading }}</h1>
+                                {% endcase %}
+                            {% endfor %}
                         </li>
                     </ul>
                 </div>
