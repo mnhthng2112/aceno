@@ -8,7 +8,7 @@
           "mega_menu_1_ErmYbk": {
             "type": "mega-menu-1",
             "settings": {
-              "heading": "Home",
+              "heading": "ssssss",
               "menu": "mega_menu_4"
             }
           }
@@ -17,6 +17,7 @@
           "mega_menu_1_ErmYbk"
         ],
         "settings": {
+          "heading": ""
         }
       }
     },
