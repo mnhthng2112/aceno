@@ -27,7 +27,7 @@
                                 </span>
                             </a>
                             {% comment %} {% render 'header-mega', banner_text: block.settings.heading  %} {% endcomment %}
-                            {% include 'header-mega', banner_text: block.settings.heading %}
+                            {% render 'header-mega', banner_text: section.settings.heading %}
 
                         </li>
                         {%- endfor %}
