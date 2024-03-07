@@ -36,13 +36,12 @@
                                 {% assign matching_block_found = false %}
                                 {% for block in section.blocks %}
                                     {% if block.settings.heading == link.title %}
-                                        {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu %}
-                                        {% assign matching_block_found = true %}
-                                        {% break %}
                                         {% if block.settings.menu == 'mega_menu_4' %}
                                         gen-menu__item--dropdown
                                         {% else %}
-                                        gen-menu__item--mega
+                                                                                {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu %}
+                                        {% assign matching_block_found = true %}
+                                        {% break %}
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
