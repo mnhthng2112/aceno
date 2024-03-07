@@ -33,10 +33,7 @@
                         {%- endfor %}
                         <li>
                             {% for block in section.blocks %}
-                                {%- case block.heading -%}
-                                    {%- when "heading" -%}
                                     <h1>{{ block.settings.heading }}</h1>
-                                {% endcase %}
                             {% endfor %}
                         </li>
                     </ul>
