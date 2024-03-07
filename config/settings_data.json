@@ -4,6 +4,18 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "mega_menu_1_ErmYbk": {
+            "type": "mega-menu-1",
+            "settings": {
+              "heading": "",
+              "menu": "mega_menu_1"
+            }
+          }
+        },
+        "block_order": [
+          "mega_menu_1_ErmYbk"
+        ],
         "settings": {
         }
       }
