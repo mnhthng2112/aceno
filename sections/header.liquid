@@ -24,13 +24,13 @@
                                 </a>
                                     {% assign matching_block_found = false %}
                                         {% for block in section.blocks %}
-                                                {% if block.settings.heading == link.title %}
-                                                    {% render 'header-mega', mega_title: block.settings.heading %}
-                                                    {% assign matching_block_found = true %}
-                                                    {% break %}
-                                                {% endif %}
-                                                {% endfor %}
-                                            {% unless matching_block_found %}
+                                            {% if block.settings.heading == link.title %}
+                                                {% render 'header-mega', mega_title: block.settings.heading %}
+                                                {% assign matching_block_found = true %}
+                                                {% break %}
+                                            {% endif %}
+                                            {% endfor %}
+                                        {% unless matching_block_found %}
                                         {% render 'header-mega' %}
                                     {% endunless %}
                             </li>
