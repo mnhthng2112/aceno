@@ -31,13 +31,14 @@
                             {% render 'header-mega', banner_text:banner-1-text  %}
                         </li>
                         {%- endfor %}
+                        <li>
                         {% for block in section.blocks %}
                             {%- case block.type -%}
                                 {%- when "heading" -%}
                                 <h1>{{ block.settings.heading }}</h1>
                             {% endcase %}
                         {% endfor %}
-                        <li>{{ block.settings.heading }}</li>
+                        </li>
                     </ul>
                 </div>
             </div>
