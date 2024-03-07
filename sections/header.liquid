@@ -37,7 +37,9 @@
                                 {% for block in section.blocks %}
                                     {% if block.settings.heading == link.title %}
                                         {% if block.settings.menu == 'mega_menu_4' %}
-                                        gen-menu__item--dropdown
+                                            {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu,  %}
+                                            {% assign matching_block_found = true %}
+                                            {% break %}
                                         {% else %}
                                             {% render 'header-mega', mega_title: block.settings.heading, mega_menu: block.settings.menu %}
                                             {% assign matching_block_found = true %}
