@@ -22,10 +22,10 @@
                                     </svg>
                                 </span>
                                 </a>
+                                {}
                                 {% for block in section.blocks %}
                                     {% if block.settings.heading == link.title %}
                                         {% render 'header-mega', mega_title: block.settings.heading %}
-                                        {% else %}
                                     {% endif %}
                                 {% endfor %}
                             </li>
