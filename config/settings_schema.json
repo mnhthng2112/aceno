@@ -6,11 +6,11 @@
         "type": "range",
         "id": "font_size",
         "min": 1,
-        "max": 24,
+        "max": 12,
         "step": 1,
         "unit": "px",
-        "label": "Font size",
-        "default": 16
+        "label": "Menu column",
+        "default": 5
       }
     ]
   }
