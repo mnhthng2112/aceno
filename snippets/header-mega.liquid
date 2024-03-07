@@ -1,6 +1,6 @@
 <div class="gen-mega-menu">
-    {% assign menu_selector = mega_menu | settings.menu %}
-    {% case mega_menu %}
+    {% assign menu_selector = mega_menu | default: settings.menu %}
+    {% case menu_selector %}
     {% when 'mega_menu_1' %}
         <div class="gen-mega-menu__container gen-container--fluid">
             <div class="gen-mega-menu__inner gen:w-full">
