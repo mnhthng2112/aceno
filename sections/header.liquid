@@ -36,9 +36,9 @@
                                 {% assign matching_block_found = false %}
                                 {% for block in section.blocks %}
                                     {% if block.settings.heading == link.title %}
-                                        {% render 'header-mega', 
-                                        mega_title: block.settings.heading, 
-                                        mega_menu: block.settings.menu,  
+                                        {% render 'header-mega',
+                                        mega_title: block.settings.heading,
+                                        mega_menu: block.settings.menu,
                                         mega_column: block.settings.mega_column %}
                                         {% assign matching_block_found = true %}
                                         {% break %}
