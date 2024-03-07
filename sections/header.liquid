@@ -26,16 +26,10 @@
                                     {% if block.settings.heading == link.title %}
                                         {% render 'header-mega', mega_title: block.settings.heading %}
                                         {% else %}
-                                        {% render 'header-mega' %}
                                     {% endif %}
                                 {% endfor %}
                             </li>
                         {%- endfor %}
-                        <li>
-                            {% for block in section.blocks %}
-                                    <h1>{{ block.settings.heading }}</h1>
-                            {% endfor %}
-                        </li>
                     </ul>
                 </div>
             </div>
