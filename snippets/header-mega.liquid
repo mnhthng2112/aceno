@@ -10,7 +10,7 @@
                         {% for link in linklists.main-menu.links %}
                             {% for childlink in link.links %}
                             <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                <a href="{{ childlink. }}">
+                                <a href="{{ childlink.url }}">
                                     <img src="{{ 'homepage-thumb.jpg' | asset_url }}" alt>
                                 </a>
                             </li>
