@@ -1,6 +1,6 @@
 {% assign match_block_found = false %}
 {% for block in section.blocks %}
-    {% assign menu_selector = mega_menu | default: 'mega-menu-3' %}
+    {% assign menu_selector = block.type | default: 'mega-menu-3' %}
     {% case menu_selector %}
     {% when 'mega-menu-1' %}
         <div class="gen-mega-menu__container gen-container--fluid">
