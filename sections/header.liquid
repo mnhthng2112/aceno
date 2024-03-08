@@ -20,8 +20,9 @@
                                 gen-menu__item--dropdown
                                 {% else %}
                                 gen-menu__item--mega
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}{% endfor %}">
+                            {% endfor %}">
                                 <a href="{{ link.url }}" class="gen-menu__link--main">
                                 {{ link.title }}
                                 <span class="gen-menu__arrow">
