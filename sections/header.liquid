@@ -34,21 +34,21 @@
                                 </span>
                                 </a>
                                 <div class="gen-mega-menu">
-                                {% assign matching_block_found = false %}
-                                {% for block in section.blocks %}
-                                    {% if block.settings.heading == link.title %}
-                                        {% render 'header-mega',
-                                        section: section,
-                                        mega_menu: block.type,
-                                        mega_html: block.settings.html,
-                                        mega_column: block.settings.mega_column %}
-                                        {% assign matching_block_found = true %}
-                                        {% break %}
-                                    {% endif %}
-                                {% endfor %}
-                                {% unless matching_block_found %}
-                                    {% render 'header-mega' %}
-                                {% endunless %}
+                                    {% comment %} {% assign matching_block_found = false %}
+                                    {% for block in section.blocks %}
+                                        {% if block.settings.heading == link.title %}
+                                            {% render 'header-mega',
+                                            mega_menu: block.type,
+                                            mega_html: block.settings.html,
+                                            mega_column: block.settings.mega_column %}
+                                            {% assign matching_block_found = true %}
+                                            {% break %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% unless matching_block_found %}
+                                        {% render 'header-mega' %}
+                                    {% endunless %} {% endcomment %}
+                                    
                                 </div>
                             </li>
                         {%- endfor %}
