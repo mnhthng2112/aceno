@@ -9,12 +9,27 @@
             "type": "mega-menu-1",
             "settings": {
               "heading": "Home",
-              "menu": "mega_menu_1"
+              "mega_column": 5
+            }
+          },
+          "mega_menu_4_hfiqKE": {
+            "type": "mega-menu-4",
+            "settings": {
+              "heading": "Shop"
+            }
+          },
+          "custom_html_GizzHb": {
+            "type": "custom_html",
+            "settings": {
+              "heading": "Lookbook",
+              "html": "sdasdasdxxxxxxxxx"
             }
           }
         },
         "block_order": [
-          "mega_menu_1_8cbqNp"
+          "mega_menu_1_8cbqNp",
+          "mega_menu_4_hfiqKE",
+          "custom_html_GizzHb"
         ],
         "settings": {
         }
