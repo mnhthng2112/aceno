@@ -598,7 +598,7 @@
     {% when 'custom_html' %}
         <div class="gen-mega-menu__container gen-container--fluid">
             <div class="gen-mega-menu__inner">
-                {{ mega_html }}
+                {{ block.settings.html }}
             </div>
         </div>
     {% endcase %}
