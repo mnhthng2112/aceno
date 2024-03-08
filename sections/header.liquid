@@ -37,6 +37,7 @@
                                 {% for block in section.blocks %}
                                     {% if block.settings.heading == link.title %}
                                         {% render 'header-mega',
+                                        section: section,
                                         mega_menu: block.type,
                                         mega_html: block.settings.html,
                                         mega_column: block.settings.mega_column %}
