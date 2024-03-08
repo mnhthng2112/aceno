@@ -216,45 +216,45 @@
             ]
         },
         {
-        "type": "custom_html",
-        "name": "Custom HTML (Mega menu)",
-        "settings": [
-            {
-            "type": "text",
-            "id": "heading",
-            "label": "For item"
-            },
-            {
-            "type": "select",
-            "id": "container",
-            "label": "Container",
-            "default": "inherit",
-            "info": "Set width for the content wrapper",
-            "options": [
+            "type": "custom_html",
+            "name": "Custom HTML (Mega menu)",
+            "settings": [
                 {
-                "value": "inherit",
-                "label": "Use header's container"
+                "type": "text",
+                "id": "heading",
+                "label": "For item"
                 },
                 {
-                "value": "container-fluid",
-                "label": "Default"
+                "type": "select",
+                "id": "container",
+                "label": "Container",
+                "default": "inherit",
+                "info": "Set width for the content wrapper",
+                "options": [
+                    {
+                    "value": "inherit",
+                    "label": "Use header's container"
+                    },
+                    {
+                    "value": "container-fluid",
+                    "label": "Default"
+                    },
+                    {
+                    "value": "w-full",
+                    "label": "Full width"
+                    },
+                    {
+                    "value": "container",
+                    "label": "Use container box"
+                    }
+                ]
                 },
                 {
-                "value": "w-full",
-                "label": "Full width"
-                },
-                {
-                "value": "container",
-                "label": "Use container box"
+                "type": "html",
+                "id": "html",
+                "label": "Custom HTML"
                 }
             ]
-            },
-            {
-            "type": "html",
-            "id": "html",
-            "label": "Custom HTML"
-            }
-        ]
         }
     ]
 }
