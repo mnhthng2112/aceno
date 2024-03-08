@@ -16,10 +16,10 @@
                             <li class="gen-menu__item gen-menu__item--parent
                             {% for block in section.blocks %}
                                 {% if block.settings.heading == link.title %}
-                                {% if block.type == 'mega-menu-4' %}
-                                gen-menu__item--dropdown
-                                {% else %}
-                                gen-menu__item--mega
+                                    {% if block.type == 'mega-menu-4' %}
+                                    gen-menu__item--dropdown
+                                    {% else %}
+                                    gen-menu__item--mega
                                     {% endif %}
                                 {% endif %}
                             {% endfor %}">
