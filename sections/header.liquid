@@ -37,7 +37,7 @@
                                     {% unless matching_block_found %}
                                         {% render 'header-mega' %}
                                     {% endunless %} {% endcomment %}
-                                    {% render 'header-mega', mega_menu: block.type %}
+                                    {% render 'header-mega', section: section %}
                                 </div>
                             </li>
                         {%- endfor %}
