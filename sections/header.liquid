@@ -214,6 +214,47 @@
                     "label": "For item"
                 }
             ]
+        },
+        {
+        "type": "custom_html",
+        "name": "Custom HTML (Mega menu)",
+        "settings": [
+            {
+            "type": "text",
+            "id": "heading",
+            "label": "For item"
+            },
+            {
+            "type": "select",
+            "id": "container",
+            "label": "Container",
+            "default": "inherit",
+            "info": "Set width for the content wrapper",
+            "options": [
+                {
+                "value": "inherit",
+                "label": "Use header's container"
+                },
+                {
+                "value": "container-fluid",
+                "label": "Default"
+                },
+                {
+                "value": "w-full",
+                "label": "Full width"
+                },
+                {
+                "value": "container",
+                "label": "Use container box"
+                }
+            ]
+            },
+            {
+            "type": "html",
+            "id": "html",
+            "label": "Custom HTML"
+            }
+        ]
         }
     ]
 }
