@@ -1,7 +1,7 @@
 
 {% assign match_block_found = false %}
 {% for block in section.blocks %}
-    {% if block.settings.heading == link.title %}
+    {% if block.settings.heading == menu_title %}
         {% assign menu_selector = block.type | default: 'mega-menu-3' %}
         {% case menu_selector %}
         {% when 'mega-menu-1' %}
