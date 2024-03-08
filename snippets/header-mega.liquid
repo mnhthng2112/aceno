@@ -1,5 +1,4 @@
 
-{% assign match_block_found = false %}
 {% for block in section.blocks %}
     {% if block.settings.heading == menu_title %}
         {% case block.type %}
@@ -603,7 +602,6 @@
                 </div>
             </div>
         {% endcase %}
-        {% assign matching_block_found = true %}
         {% break %}
     {% endif %}
 {% endfor %}
