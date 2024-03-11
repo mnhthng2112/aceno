@@ -4,10 +4,7 @@
     {% for block in section.blocks %}
         {% if block.settings.heading == link.title %}
             {% if block.type == 'mega-menu-4' %}
-                gen-menu__item--dropdown
-            {% else %}
-                gen-menu__item--mega
-            {% endif %}
+                gen-menu__item--dropdown % else %} gen-menu__item--mega{% endif %}
         {% endif %}
     {% endfor %}">
         <a href="{{ link.url }}" class="gen-menu__link--main">
