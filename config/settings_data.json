@@ -9,10 +9,11 @@
             "type": "mega-menu-1",
             "settings": {
               "heading": "Home",
-              "mega_column": 5,
-              "limit_image": 4,
               "switch_button_display": true,
-              "view_all_url": "shopify:\/\/collections\/all"
+              "view_all_url": "shopify:\/\/collections\/all",
+              "text_for_button": "View all product",
+              "mega_column": 5,
+              "limit_image": 10
             }
           },
           "mega_menu_4_hfiqKE": {
