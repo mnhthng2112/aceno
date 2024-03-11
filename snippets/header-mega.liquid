@@ -13,7 +13,7 @@
                                     <a href="{{ childlink.url }}">
                                         <img src="{{ childlink.image_url | asset_url }}" alt="{{ childlink.title }}">
                                     </a>
-                                    <div>{{ childlink.title }}</div>
+                                    <div>{{ childlink.title }} - {{ link.handle }}</div>
                                 </li>
                             {%- endfor %}
                         {%- endfor %}
