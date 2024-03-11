@@ -7,9 +7,9 @@
             <div class="gen-mega-menu__container gen-container--fluid">
                 <div class="gen-mega-menu__inner gen:w-full">
                     <ul class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-{{ block.settings.mega_column }} gen:gap-30">
-                        {% for link in linklists.main-menu.links limit: block.settings.limit_image %}
+                        {% for link in linklists.main-menu.links %}
                             {% if link.links != blank %}
-                                {% for childlink in link.links %}
+                                {% for childlink in link.links limit: block.settings.limit_image %}
                                     <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                         <a href="{{ childlink.url }}">
                                             <img src="{{ childlink.image_url | asset_url }}" alt="{{ childlink.title }}">
