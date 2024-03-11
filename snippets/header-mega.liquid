@@ -18,13 +18,6 @@
                         <div class="gen-mega-menu__container gen-container--fluid">
                             <div class="gen-mega-menu__inner gen:w-full">
                                 <ul class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-{{ block.settings.mega_column }} gen:gap-30">
-                                    {% comment %} {% for childlink in link.links limit: block.settings.limit_image %}
-                                        <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="{{ childlink.url }}">
-                                                <img src="{{ 'homepage-thumb.jpg' | asset_url }}" alt="{{ childlink.title }}">
-                                            </a>
-                                        </li>
-                                    {%- endfor %} {% endcomment %}
                                     {% if link.links.size > 0 %}
                                         {% for childlink in link.links limit: block.settings.limit_image %}
                                             {% assign image_index = forloop.index | minus: 1 %}
