@@ -584,6 +584,15 @@
 
 {% unless found_block %}
 {% for link in linklists.main-menu.links -%}
+    <li class="gen-menu__item gen-menu__item--parent{% for block in section.blocks %}{% if block.settings.heading == link.title %}{% if block.type == 'mega-menu-4' %} gen-menu__item--dropdown {% else %} gen-menu__item--mega{% endif %}{% endif %}{% endfor %}">
+        <a href="{{ link.url }}" class="gen-menu__link--main">
+            {{ link.title }}
+            <span class="gen-menu__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                <path d="M1.28003 1L5.28003 5L9.28003 1" stroke="#7C99A9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>
+        </a>
     <div class="gen-mega-menu__container gen-container--fluid">
         <div class="gen-mega-menu__inner gen:w-full">
             <ul class="gen-sub-menu gen-sub-menu--level-1">
@@ -899,5 +908,7 @@
             </ul>
         </div>
     </div>
+            </div>
+    </li>
 {%- endfor %} 
 {% endunless %}
