@@ -27,7 +27,6 @@
                         <div class="gen-mega-menu__container gen-container--fluid">
                             <div class="gen-mega-menu__inner gen:w-full">
                                 <ul class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-{{ block.settings.mega_column }} gen:gap-30">
-                                    {% for link in linklists.main-menu.links %}
                                         {% for childlink in link.links %}
                                             <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                                 <a href="{{ childlink.url }}">
@@ -36,7 +35,6 @@
                                                 <div>{{ childlink.title }} - {{ link.handle }}</div>
                                             </li>
                                         {%- endfor %}
-                                    {%- endfor %}
                                     <li class="gen:text-center gen:col-span-full">
                                         <a href="{{ block.settings.view_all_url }}"
                                             class="gen-btn gen-btn--dark gen-rounded--full gen-btn--lg">View
