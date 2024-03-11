@@ -583,7 +583,7 @@
 {%- endfor %}
 
 {% unless found_block %}
-{% for link in linklists.main-menu.links -%}
+{% comment %} {% for link in linklists.main-menu.links -%}
     <li class="gen-menu__item gen-menu__item--parent gen-menu__item--mega">
         <a href="{{ link.url }}" class="gen-menu__link--main">
             {{ link.title }}
@@ -911,5 +911,5 @@
             </div>
         </div>
     </li>
-{%- endfor %}
+{%- endfor %} {% endcomment %}
 {% endunless %}
