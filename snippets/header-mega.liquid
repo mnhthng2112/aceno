@@ -12,7 +12,6 @@
         <div class="gen-mega-menu">
             {% for block in section.blocks %}
                 {% if block.settings.heading == link.title %}
-                    {% assign found_block = true %}
                     {% case block.type %}
                     {% when 'mega-menu-1' %}
                         <div class="gen-mega-menu__container gen-container--fluid">
@@ -575,6 +574,7 @@
                             </div>
                         </div>
                     {% endcase %}
+                    {% assign found_block = true %}
                     {% break %}
                 {% endif %}
             {% endfor %}
