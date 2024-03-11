@@ -26,7 +26,7 @@
                                         </li>
                                     {%- endfor %} {% endcomment %}
                                     {% if link.links.size > 0 %}
-                                        {% for childlink in link.links %}
+                                        {% for childlink in link.links limit: block.settings.limit_image %}
                                             {% assign image_index = forloop.index | minus: 1 %}
                                             {% assign image_setting_key = 'image_link_' | append: forloop.index %}
                                             {% assign image_link = settings[image_setting_key] %}
@@ -42,7 +42,7 @@
                                             </li>
                                         {% endfor %}
                                     {% endif %}
-                                    
+
                                     {% if block.settings.switch_button_display %}
                                     <li class="gen:text-center gen:col-span-full">
                                         <a href="{{ block.settings.view_all_url }}" class="gen-btn gen-btn--dark gen-rounded--full gen-btn--lg">
