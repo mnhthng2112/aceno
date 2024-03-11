@@ -64,32 +64,34 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    {%- endfor %}
+                                    {%- endfor %} 
                                 </ul>
                                 <div class="gen-mega-menu__content">
                                     <div class="gen:grid gen:grid-cols-3 gen:gap-30">
                                     {% for collection in collection.products %}
-                                        <div class="gen-collection-card gen-observed gen-fadeInUp">
-                                            <div class="gen-collection-card__inner">
-                                            <a href="#" class="gen-collection-card__img">
-                                                <figure style="--aspect-ratio: 242/303">
-                                                    <img src="{{ collection.featured_image | image_url }}" alt>
-                                                </figure>
-                                            </a>
-                                            <div class="gen-collection-card__info gen-collection-card__info--overlap gen-text-center">
+                                    <div class="gen-collection-card gen-observed gen-fadeInUp">
+                                        <div class="gen-collection-card__inner">
+                                        <a href="#" class="gen-collection-card__img">
+                                            <figure style="--aspect-ratio: 242/303">
+                                            <img src="{{ collection.image | i }}" alt>
+                                            </figure>
+                                        </a>
+                                        <div
+                                            class="gen-collection-card__info gen-collection-card__info--overlap gen-text-center">
 
-                                                <div class="gen-collection-card__subtitle gen-text--lg"></div>
+                                            <div
+                                            class="gen-collection-card__subtitle gen-text--lg"></div>
 
-                                                <h3
-                                                class="gen-collection-card__title gen-text--lg">
-                                                <a href="#"></a>
-                                                </h3>
+                                            <h3
+                                            class="gen-collection-card__title gen-text--lg">
+                                            <a href="#"></a>
+                                            </h3>
 
-                                                <a href="#"
-                                                class="gen-btn gen-btn--white gen-rounded--full gen-btn--sm">Blazers</a>
-                                            </div>
-                                            </div>
+                                            <a href="#"
+                                            class="gen-btn gen-btn--white gen-rounded--full gen-btn--sm">Blazers</a>
                                         </div>
+                                        </div>
+                                    </div>
                                     {% endfor %}
                                     <ul
                                         class="gen-sub-menu__item gen-sub-menu__item--level-1">
