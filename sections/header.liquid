@@ -12,7 +12,7 @@
                 <div class="gen-header__menu">
                 <!-- Main menu -->
                     <ul class="gen-menu">
-                        {% for link in linklists.main-menu.links -%}
+                        {% comment %} {% for link in linklists.main-menu.links -%}
                             <li class="gen-menu__item gen-menu__item--parent
                             {% for block in section.blocks %}
                                 {% if block.settings.heading == link.title %}
@@ -31,11 +31,11 @@
                                     </svg>
                                 </span>
                                 </a>
-                                <div class="gen-mega-menu">
+                                <div class="gen-mega-menu"> {% endcomment %}
                                     {% render 'header-mega', section: section, menu_title: link.title %}
-                                </div>
+                                {% comment %} </div>
                             </li>
-                        {%- endfor %}
+                        {%- endfor %} {% endcomment %}
                     </ul>
                 </div>
             </div>
