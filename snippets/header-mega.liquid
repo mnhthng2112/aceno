@@ -31,7 +31,7 @@
                                         {% for childlink in link.links %}
                                             <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                                 <a href="{{ childlink.url }}">
-                                                    <img src="{{ childlink.image_url | asset_url }}" alt="{{ childlink.title }}">
+                                                    <img src="{{ image_url | asset_url }}" alt="{{ childlink.title }}">
                                                 </a>
                                                 <div>{{ childlink.title }} - {{ link.handle }}</div>
                                             </li>
