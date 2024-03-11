@@ -1,6 +1,6 @@
 {% assign found_block = false %}
 {% for link in linklists.main-menu.links -%}
-    <li class="gen-menu__item gen-menu__item--parent{% assign found_block = false %}{% for block in section.blocks %}{% if block.settings.heading == link.title %}{% if block.type == 'mega-menu-4' %} gen-menu__item--dropdown {% else %} gen-menu__item--mega{% endif %}{% endif %}{% endfor %}">
+    <li class="gen-menu__item gen-menu__item--parent{% assign found_block = false %}{% for block in section.blocks %}{% if block.settings.heading == link.title %}{% if block.type == 'mega-menu-4' %} gen-menu__item--dropdown {% else %} gen-menu__item--mega{% endif %}{% assign found_block = true %}{% endif %}{% endfor %}">
         <a href="{{ link.url }}" class="gen-menu__link--main">
             {{ link.title }}
             <span class="gen-menu__arrow">
