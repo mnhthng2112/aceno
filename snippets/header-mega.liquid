@@ -29,7 +29,7 @@
                                         {% for childlink in link.links limit: block.settings.limit_image %}
                                             {% assign image_index = forloop.index | minus: 1 %}
                                             {% assign image_setting_key = 'image_link_' | append: forloop.index %}
-                                            {% assign image_link = settings[image_setting_key] %}
+                                            {% assign image_link = block.settings[image_setting_key] %}
                                             
                                             <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                             <a href="{{ childlink.url }}">
