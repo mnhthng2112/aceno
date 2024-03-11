@@ -10,6 +10,8 @@
             "settings": {
               "heading": "Home",
               "mega_column": 5,
+              "limit_image": 4,
+              "switch_button_display": true,
               "view_all_url": "shopify:\/\/collections\/all"
             }
           },
