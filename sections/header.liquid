@@ -12,30 +12,7 @@
                 <div class="gen-header__menu">
                 <!-- Main menu -->
                     <ul class="gen-menu">
-                        {% comment %} {% for link in linklists.main-menu.links -%}
-                            <li class="gen-menu__item gen-menu__item--parent
-                            {% for block in section.blocks %}
-                                {% if block.settings.heading == link.title %}
-                                    {% if block.type == 'mega-menu-4' %}
-                                     gen-menu__item--dropdown
-                                    {% else %}
-                                     gen-menu__item--mega
-                                    {% endif %}
-                                {% endif %}
-                            {% endfor %}">
-                                <a href="{{ link.url }}" class="gen-menu__link--main">
-                                {{ link.title }}
-                                <span class="gen-menu__arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
-                                    <path d="M1.28003 1L5.28003 5L9.28003 1" stroke="#7C99A9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                </a>
-                                <div class="gen-mega-menu"> {% endcomment %}
-                                    {% render 'header-mega', section: section %}
-                                {% comment %} </div>
-                            </li>
-                        {%- endfor %} {% endcomment %}
+                        {% render 'header-mega', section: section %}
                     </ul>
                 </div>
             </div>
