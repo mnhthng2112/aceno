@@ -97,7 +97,7 @@
                                         <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                             <a href="#" class="gen-menu__link">Top rate</a>
                                             <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                {% for product in collections[block.settings.collection].products %}
+                                                {% for product in collections[block.settings.collection].products limit: 3 %}
                                                 <li class="gen-sub-menu__product-card">
                                                     <a href="#" class="gen-sub-menu__product-card-thumb">
                                                         <figure style="--aspect-ratio: 65/82">
