@@ -158,6 +158,7 @@
                                                 </svg>
                                             </span>
                                         </a>
+                                        {% if grandlink in childlink.links != blank %}
                                         <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
                                             {% for grandlink in childlink.links %}
                                             <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
@@ -165,6 +166,7 @@
                                             </li>
                                             {% endfor %}
                                         </ul>
+                                        {% endif %}
                                     </li>
                                     {% endfor %}    
                                 </ul>
