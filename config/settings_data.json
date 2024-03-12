@@ -32,7 +32,8 @@
           "mega_menu_2_dpKXRn": {
             "type": "mega-menu-2",
             "settings": {
-              "heading": "Blog"
+              "heading": "Blog",
+              "collection": "clothes"
             }
           }
         },
