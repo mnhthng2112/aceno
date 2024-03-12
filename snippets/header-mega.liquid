@@ -86,7 +86,7 @@
                                         </div>
                                     </div>
                                     {% endfor %}
-                                    {% if block.settings.product_list != blank %}
+                                    {% comment %} {% if block.settings.product_list != blank %}
                                     <ul class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                         <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                             <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
@@ -111,7 +111,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    {% endif %}
+                                    {% endif %} {% endcomment %}
                                 </div>
                             </div>
                         </div>
