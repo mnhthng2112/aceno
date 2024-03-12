@@ -89,8 +89,9 @@
                                         {% if block.settings.product_list != blank %}
                                         <ul class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                             <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                                {if}
-                                                <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
+                                                {% if block.settings.text_product != blank %}
+                                                    <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
+                                                {% endif %}
                                                 <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
                                                     {% for product in block.settings.product_list limit: 3 %}
                                                     <li class="gen-sub-menu__product-card">
