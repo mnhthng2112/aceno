@@ -11,7 +11,7 @@
               "heading": "Home",
               "switch_button_display": true,
               "view_all_url": "shopify:\/\/collections\/all",
-              "text_for_button": "View all product",
+              "text_for_button": "",
               "mega_column": 5,
               "limit_image": 10
             }
