@@ -44,13 +44,20 @@
                 "cropped-double-breasted-blazer"
               ]
             }
+          },
+          "mega_menu_3_ewJcQE": {
+            "type": "mega-menu-3",
+            "settings": {
+              "heading": "Product"
+            }
           }
         },
         "block_order": [
           "mega_menu_1_8cbqNp",
           "mega_menu_4_hfiqKE",
           "custom_html_GizzHb",
-          "mega_menu_2_dpKXRn"
+          "mega_menu_2_dpKXRn",
+          "mega_menu_3_ewJcQE"
         ],
         "settings": {
         }
