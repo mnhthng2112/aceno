@@ -40,7 +40,7 @@
                                     {% if block.settings.switch_button_display %}
                                     <li class="gen:text-center gen:col-span-full">
                                         <a href="{{ block.settings.view_all_url }}" class="gen-btn gen-btn--dark gen-rounded--full gen-btn--lg">
-                                            {% assign text_button = block.settings.text_for_button | def %}
+                                            {% assign text_button = block.settings.text_for_button | default: View all product %}
                                         {{ }}
                                         </a>
                                     </li>
