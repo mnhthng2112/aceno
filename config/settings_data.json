@@ -33,7 +33,16 @@
             "type": "mega-menu-2",
             "settings": {
               "heading": "Blog",
-              "collection": "clothes"
+              "text_product": "Top rate",
+              "collection_list": [
+                "clothes",
+                "frontpage"
+              ],
+              "product_list": [
+                "bralette-super-stretch-cotton",
+                "cashmere-cropped-cable-knit",
+                "cropped-double-breasted-blazer"
+              ]
             }
           }
         },
