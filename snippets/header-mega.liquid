@@ -69,7 +69,7 @@
                                 <div class="gen-mega-menu__content">
                                     <div class="gen:grid gen:grid-cols-3 gen:gap-30">
                                     {% for collection in block.settings.collection_list limit: 2 %}
-                                    <div class="gen-collection-card">
+                                    <div class="gen-collection-card gen-observed gen-fadeInUp">
                                         <div class="gen-collection-card__inner">
                                         <a href="#" class="gen-collection-card__img">
                                             <figure style="--aspect-ratio: 242/303">
@@ -86,7 +86,7 @@
                                         </div>
                                     </div>
                                     {% endfor %}
-                                    {% comment %} {% if block.settings.product_list != blank %}
+                                    {% if block.settings.product_list != blank %}
                                     <ul class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                         <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                             <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
@@ -111,7 +111,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    {% endif %} {% endcomment %}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
