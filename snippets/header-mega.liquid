@@ -185,13 +185,14 @@
                 {% endif %}
             {% endfor %}
             {% unless found_block %}
-                                        <div class="gen-mega-menu__container">
-                            <div class="gen-mega-menu__inner">
-                                <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                    <li
-                                    class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                    <div class="gen-mega-menu__container">
+                        <div class="gen-mega-menu__inner">
+                            <ul class="gen-sub-menu gen-sub-menu--level-1">
+                                {% for childlink in link.links %}
+                                <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                     <a href="#" class="gen-menu__link">
-                                        Blog Post
+                                        {{ childlink.title }}
+                                        {% if childlink.links != blank %}
                                         <span class="gen-menu__sub-arrow">
                                             <svg width="6" height="10" viewBox="0 0 6 10"
                                                 fill="none"
@@ -201,54 +202,22 @@
                                                 stroke-linejoin="round" />
                                             </svg>
                                         </span>
+                                        {% endif %}
                                     </a>
+                                    {% if childlink.links != blank %}
                                     <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                        <li
-                                        class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                        <a href="#" class="gen-menu__link">Post
-                                            Sidebar</a>
+                                        {% for grandlink in childlink.links %}
+                                        <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
+                                            <a href="#" class="gen-menu__link">{{ grandlink.title }}</a>
                                         </li>
-                                        <li
-                                        class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                        <a href="#" class="gen-menu__link">Post One
-                                            Column</a>
-                                        </li>
-                                        <li
-                                        class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                        <a href="#" class="gen-menu__link">Post Prallax
-                                            Image</a>
-                                        </li>
-                                        <li
-                                        class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                        <a href="#" class="gen-menu__link">Post
-                                            Sticky</a>
-                                        </li>
-                                        <li
-                                        class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                        <a href="#" class="gen-menu__link">Post Simple
-                                            Title</a>
-                                        </li>
+                                        {% endfor %}
                                     </ul>
-                                    </li>
-                                    <li
-                                    class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                    <a href="#" class="gen-menu__link">Blog Standard</a>
-                                    </li>
-                                    <li
-                                    class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                    <a href="#" class="gen-menu__link">Blog Grid</a>
-                                    </li>
-                                    <li
-                                    class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                    <a href="#" class="gen-menu__link">Blog Grid mix</a>
-                                    </li>
-                                    <li
-                                    class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                    <a href="#" class="gen-menu__link">Blog List</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}    
+                            </ul>
                         </div>
+                    </div>
             {% endunless %}
         </div>
     </li>
