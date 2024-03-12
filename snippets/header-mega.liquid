@@ -126,10 +126,10 @@
                                     <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                         <a href="#" class="gen-menu__link">{{ childlink.title }}</a>
                                         <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                            {}
+                                            {% for grandlink in childlink.links %}
                                             <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
                                                 <a href="#" class="gen-menu__link">
-                                                    Default layout
+                                                    {{ grandlink.title }}
                                                     <span class="gen-menu-badge gen-menu-badge--hot" style="--badge: &quot;hot&quot;;"></span>
                                                 </a>
                                             </li>
@@ -139,6 +139,7 @@
                                                     <span class="gen-menu-badge gen-menu-badge--new" style="--badge: &quot;new&quot;;"></span>
                                                 </a>
                                             </li>
+                                            {% endfor %}
                                         </ul>
                                     </li>
                                 {% endfor %}
