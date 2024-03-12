@@ -95,7 +95,7 @@
                                     {% endfor %}
                                     <ul class="gen-sub-menu__item gen-sub-menu__item--level-1">
                                         <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="#" class="gen-menu__link">Top rate</a>
+                                            <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
                                             <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
                                                 {% for product in collections[block.settings.collection].products limit: 3 %}
                                                 <li class="gen-sub-menu__product-card">
