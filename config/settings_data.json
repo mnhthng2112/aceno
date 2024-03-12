@@ -29,26 +29,25 @@
               "html": "sdasdasdxxxxxxxxx"
             }
           },
-          "mega_menu_2_dpKXRn": {
+          "mega_menu_3_ewJcQE": {
+            "type": "mega-menu-3",
+            "settings": {
+              "heading": "Product"
+            }
+          },
+          "mega_menu_2_g8TWag": {
             "type": "mega-menu-2",
             "settings": {
               "heading": "Blog",
               "text_product": "Top rate",
               "collection_list": [
                 "clothes",
-                "frontpage"
+                "frontpage",
+                "sssss"
               ],
               "product_list": [
-                "bralette-super-stretch-cotton",
-                "cashmere-cropped-cable-knit",
-                "cropped-double-breasted-blazer"
+
               ]
-            }
-          },
-          "mega_menu_3_ewJcQE": {
-            "type": "mega-menu-3",
-            "settings": {
-              "heading": "Product"
             }
           }
         },
@@ -56,8 +55,8 @@
           "mega_menu_1_8cbqNp",
           "mega_menu_4_hfiqKE",
           "custom_html_GizzHb",
-          "mega_menu_2_dpKXRn",
-          "mega_menu_3_ewJcQE"
+          "mega_menu_3_ewJcQE",
+          "mega_menu_2_g8TWag"
         ],
         "settings": {
         }
