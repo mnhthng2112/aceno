@@ -12,13 +12,12 @@
         </a>
         <div class="gen-mega-menu">
             {% for block in section.blocks %}
-                {% if block.settings.heading == link.title %}
+                {% if block.settings.heading == link.title && link.links.size > 0 %}
                     {% case block.type %}
                     {% when 'mega-menu-1' %}
                         <div class="gen-mega-menu__container gen-container--fluid">
                             <div class="gen-mega-menu__inner gen:w-full">
                                 <ul class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-{{ block.settings.mega_column }} gen:gap-30">
-                                    {% if link.links.size > 0 %}
                                         {% for childlink in link.links limit: block.settings.limit_image %}
                                             {% assign image_index = forloop.index | minus: 1 %}
                                             {% assign image_setting_key = 'image_link_' | append: forloop.index %}
@@ -43,7 +42,6 @@
                                         </a>
                                     </li>
                                     {% endif %}
-                                                                        {% endif %}
 
                                 </ul>
                             </div>
