@@ -12,7 +12,8 @@
         </a>
         <div class="gen-mega-menu">
             {% for block in section.blocks %}
-                {% if block.settings.heading == link.title && link.links.size > 0 %}
+                {% if block.settings.heading == link.title %}
+                    
                     {% case block.type %}
                     {% when 'mega-menu-1' %}
                         <div class="gen-mega-menu__container gen-container--fluid">
