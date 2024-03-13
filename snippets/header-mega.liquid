@@ -10,137 +10,182 @@
                 </svg>
             </span>
         </a>
-        <div class="gen-mega-menu">
-            {% for block in section.blocks %}
-                {% if link.links.size > 0 %}
-                {% if block.settings.heading == link.title %}
-                    {% case block.type %}
-                    {% when 'mega-menu-1' %}
-                        <div class="gen-mega-menu__container gen-container--fluid">
-                            <div class="gen-mega-menu__inner gen:w-full">
-                                <ul class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-{{ block.settings.mega_column }} gen:gap-30">
-                                        {% for childlink in link.links limit: block.settings.limit_image %}
-                                            {% assign image_index = forloop.index | minus: 1 %}
-                                            {% assign image_setting_key = 'image_link_' | append: forloop.index %}
-                                            {% assign image_link = block.settings[image_setting_key] %}
-                                            
-                                            <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <a href="{{ childlink.url }}">
-                                                {% if image_link %}
-                                                <img src="{{ image_link | img_url: 'master' }}" alt="{{ childlink.title | escape }}">
-                                                {% else %}
-                                                <img src="{{ 'homepage-thumb.jpg' | asset_url }}" alt="{{ childlink.title | escape }}">
-                                                {% endif %}
-                                            </a>
-                                            </li>
-                                        {% endfor %}
+        {% if link.links.size > 0 %}
 
-                                    {% if block.settings.switch_button_display %}
-                                    <li class="gen:text-center gen:col-span-full">
-                                        <a href="{{ block.settings.view_all_url }}" class="gen-btn gen-btn--dark gen-rounded--full gen-btn--lg">
-                                            {% assign text_button = block.settings.text_for_button | default: "View all product" %}
-                                            {{ text_button }}
-                                        </a>
-                                    </li>
-                                    {% endif %}
-
-                                </ul>
-                            </div>
-                        </div>
-                    {% when 'mega-menu-2' %}
-                        <div class="gen-mega-menu__container gen-container--fluid">
-                            <div class="gen-mega-menu__inner">
-                                <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                    {% for childlink in link.links %}
-                                    <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                        <a href="{{ childlink.url }}" class="gen-menu__link">{{ childlink.title }}</a>
-                                        <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                            <li class="gen-sub-menu__item">
-                                            {% for grandlink in childlink.links %}
-                                                <a href="{{ grandlink.url }}" class="gen-menu__link">
-                                                    {{ grandlink.title }}
+            <div class="gen-mega-menu">
+                {% for block in section.blocks %}
+                    {% if block.settings.heading == link.title %}
+                        {% case block.type %}
+                        {% when 'mega-menu-1' %}
+                            <div class="gen-mega-menu__container gen-container--fluid">
+                                <div class="gen-mega-menu__inner gen:w-full">
+                                    <ul class="gen-sub-menu gen-sub-menu--level-1 gen-sub-menu--grid gen:grid-cols-{{ block.settings.mega_column }} gen:gap-30">
+                                            {% for childlink in link.links limit: block.settings.limit_image %}
+                                                {% assign image_index = forloop.index | minus: 1 %}
+                                                {% assign image_setting_key = 'image_link_' | append: forloop.index %}
+                                                {% assign image_link = block.settings[image_setting_key] %}
+                                                
+                                                <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                                                <a href="{{ childlink.url }}">
+                                                    {% if image_link %}
+                                                    <img src="{{ image_link | img_url: 'master' }}" alt="{{ childlink.title | escape }}">
+                                                    {% else %}
+                                                    <img src="{{ 'homepage-thumb.jpg' | asset_url }}" alt="{{ childlink.title | escape }}">
+                                                    {% endif %}
                                                 </a>
+                                                </li>
                                             {% endfor %}
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    {%- endfor %} 
-                                </ul>
-                                <div class="gen-mega-menu__content">
-                                    <div class="gen:grid gen:grid-cols-3 gen:gap-30">
-                                        {% for collection in block.settings.collection_list limit: 2 %}
-                                        <div class="gen-collection-card gen-observed gen-fadeInUp">
-                                            <div class="gen-collection-card__inner">
-                                            <a href="#" class="gen-collection-card__img">
-                                                <figure style="--aspect-ratio: 242/303">
-                                                <img src="{{ collection.featured_image | image_url }}" alt>
-                                                </figure>
+
+                                        {% if block.settings.switch_button_display %}
+                                        <li class="gen:text-center gen:col-span-full">
+                                            <a href="{{ block.settings.view_all_url }}" class="gen-btn gen-btn--dark gen-rounded--full gen-btn--lg">
+                                                {% assign text_button = block.settings.text_for_button | default: "View all product" %}
+                                                {{ text_button }}
                                             </a>
-                                            <div class="gen-collection-card__info gen-collection-card__info--overlap gen-text-center">
-                                                <div class="gen-collection-card__subtitle gen-text--lg"></div>
-                                                <h3 class="gen-collection-card__title gen-text--lg">
-                                                    <a href="{{ collection.url }}"></a>
-                                                </h3>
-                                                <a href="{{ collection.url }}" class="gen-btn gen-btn--white gen-rounded--full gen-btn--sm">{{ collection.title }}</a>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                        {% if block.settings.product_list != blank %}
-                                        <ul class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                            <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                                {% if block.settings.text_product != blank %}
-                                                    <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
-                                                {% endif %}
-                                                <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                                    {% for product in block.settings.product_list limit: 3 %}
-                                                    <li class="gen-sub-menu__product-card">
-                                                        <a href="#" class="gen-sub-menu__product-card-thumb">
-                                                            <figure style="--aspect-ratio: 65/82">
-                                                                <img src="{{ product.featured_image | image_url }}"  alt>
-                                                            </figure>
-                                                        </a>
-                                                        <div class="gen-sub-menu__product-card-content">
-                                                            <h3 class="gen-sub-menu__product-card-title">
-                                                                <a href="#">{{ product.title }}</a>
-                                                            </h3>
-                                                            <div class="gen-sub-menu__product-card-price">
-                                                                {{ product.price }}
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                        </li>
                                         {% endif %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        {% when 'mega-menu-2' %}
+                            <div class="gen-mega-menu__container gen-container--fluid">
+                                <div class="gen-mega-menu__inner">
+                                    <ul class="gen-sub-menu gen-sub-menu--level-1">
+                                        {% for childlink in link.links %}
+                                        <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                                            <a href="{{ childlink.url }}" class="gen-menu__link">{{ childlink.title }}</a>
+                                            <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
+                                                <li class="gen-sub-menu__item">
+                                                {% for grandlink in childlink.links %}
+                                                    <a href="{{ grandlink.url }}" class="gen-menu__link">
+                                                        {{ grandlink.title }}
+                                                    </a>
+                                                {% endfor %}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        {%- endfor %} 
+                                    </ul>
+                                    <div class="gen-mega-menu__content">
+                                        <div class="gen:grid gen:grid-cols-3 gen:gap-30">
+                                            {% for collection in block.settings.collection_list limit: 2 %}
+                                            <div class="gen-collection-card gen-observed gen-fadeInUp">
+                                                <div class="gen-collection-card__inner">
+                                                <a href="#" class="gen-collection-card__img">
+                                                    <figure style="--aspect-ratio: 242/303">
+                                                    <img src="{{ collection.featured_image | image_url }}" alt>
+                                                    </figure>
+                                                </a>
+                                                <div class="gen-collection-card__info gen-collection-card__info--overlap gen-text-center">
+                                                    <div class="gen-collection-card__subtitle gen-text--lg"></div>
+                                                    <h3 class="gen-collection-card__title gen-text--lg">
+                                                        <a href="{{ collection.url }}"></a>
+                                                    </h3>
+                                                    <a href="{{ collection.url }}" class="gen-btn gen-btn--white gen-rounded--full gen-btn--sm">{{ collection.title }}</a>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            {% if block.settings.product_list != blank %}
+                                            <ul class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                                                <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                                                    {% if block.settings.text_product != blank %}
+                                                        <a href="#" class="gen-menu__link">{{ block.settings.text_product }}</a>
+                                                    {% endif %}
+                                                    <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
+                                                        {% for product in block.settings.product_list limit: 3 %}
+                                                        <li class="gen-sub-menu__product-card">
+                                                            <a href="#" class="gen-sub-menu__product-card-thumb">
+                                                                <figure style="--aspect-ratio: 65/82">
+                                                                    <img src="{{ product.featured_image | image_url }}"  alt>
+                                                                </figure>
+                                                            </a>
+                                                            <div class="gen-sub-menu__product-card-content">
+                                                                <h3 class="gen-sub-menu__product-card-title">
+                                                                    <a href="#">{{ product.title }}</a>
+                                                                </h3>
+                                                                <div class="gen-sub-menu__product-card-price">
+                                                                    {{ product.price }}
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {% when 'mega-menu-3' %}
-                        <div class="gen-mega-menu__container gen-container--fluid">
-                            <div class="gen-mega-menu__inner gen:w-full">
-                                <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                {% for childlink in link.links %}
-                                    <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                        <a href="#" class="gen-menu__link">{{ childlink.title }}</a>
-                                        <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                            {% for grandlink in childlink.links %}
-                                            <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                                <a href="#" class="gen-menu__link">
-                                                    {{ grandlink.title }}
-                                                    <span class="gen-menu-badge gen-menu-badge--hot" style="--badge: &quot;hot&quot;;"></span>
-                                                </a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </li>
-                                {% endfor %}
-                                </ul>
+                        {% when 'mega-menu-3' %}
+                            <div class="gen-mega-menu__container gen-container--fluid">
+                                <div class="gen-mega-menu__inner gen:w-full">
+                                    <ul class="gen-sub-menu gen-sub-menu--level-1">
+                                    {% for childlink in link.links %}
+                                        <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                                            <a href="#" class="gen-menu__link">{{ childlink.title }}</a>
+                                            <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
+                                                {% for grandlink in childlink.links %}
+                                                <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
+                                                    <a href="#" class="gen-menu__link">
+                                                        {{ grandlink.title }}
+                                                        <span class="gen-menu-badge gen-menu-badge--hot" style="--badge: &quot;hot&quot;;"></span>
+                                                    </a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    {% when 'mega-menu-4' %}
+                        {% when 'mega-menu-4' %}
+                            <div class="gen-mega-menu__container">
+                                <div class="gen-mega-menu__inner">
+                                    <ul class="gen-sub-menu gen-sub-menu--level-1">
+                                        {% for childlink in link.links %}
+                                        <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
+                                            <a href="#" class="gen-menu__link">
+                                                {{ childlink.title }}
+                                                {% if childlink.links != blank %}
+                                                <span class="gen-menu__sub-arrow">
+                                                    <svg width="6" height="10" viewBox="0 0 6 10"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 9L5 5L1 1" stroke="#7C99A9"
+                                                        stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                                {% endif %}
+                                            </a>
+                                            {% if childlink.links != blank %}
+                                            <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
+                                                {% for grandlink in childlink.links %}
+                                                <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
+                                                    <a href="#" class="gen-menu__link">{{ grandlink.title }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}    
+                                    </ul>
+                                </div>
+                            </div>
+                        {% when 'custom_html' %}
+                            <div class="gen-mega-menu__container gen-container--fluid">
+                                <div class="gen-mega-menu__inner">
+                                    {{ block.settings.html }}
+                                </div>
+                            </div>
+                        {% endcase %}
+                        {% assign found_block = true %}
+                    {% endif %}
+                {% endfor %}
+                {% unless found_block %}
                         <div class="gen-mega-menu__container">
                             <div class="gen-mega-menu__inner">
                                 <ul class="gen-sub-menu gen-sub-menu--level-1">
@@ -174,52 +219,8 @@
                                 </ul>
                             </div>
                         </div>
-                    {% when 'custom_html' %}
-                        <div class="gen-mega-menu__container gen-container--fluid">
-                            <div class="gen-mega-menu__inner">
-                                {{ block.settings.html }}
-                            </div>
-                        </div>
-                    {% endcase %}
-                    {% assign found_block = true %}
-                {% endif %}
-                {% endif %}
-            {% endfor %}
-            {% unless found_block %}
-                    <div class="gen-mega-menu__container">
-                        <div class="gen-mega-menu__inner">
-                            <ul class="gen-sub-menu gen-sub-menu--level-1">
-                                {% for childlink in link.links %}
-                                <li class="gen-sub-menu__item gen-sub-menu__item--level-1">
-                                    <a href="#" class="gen-menu__link">
-                                        {{ childlink.title }}
-                                        {% if childlink.links != blank %}
-                                        <span class="gen-menu__sub-arrow">
-                                            <svg width="6" height="10" viewBox="0 0 6 10"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 9L5 5L1 1" stroke="#7C99A9"
-                                                stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            </svg>
-                                        </span>
-                                        {% endif %}
-                                    </a>
-                                    {% if childlink.links != blank %}
-                                    <ul class="gen-mega-menu__column gen-sub-menu gen-sub-menu--level-2">
-                                        {% for grandlink in childlink.links %}
-                                        <li class="gen-sub-menu__item gen-sub-menu__item--level-2">
-                                            <a href="#" class="gen-menu__link">{{ grandlink.title }}</a>
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </li>
-                                {% endfor %}    
-                            </ul>
-                        </div>
-                    </div>
-            {% endunless %}
-        </div>
+                {% endunless %}
+            </div>
+        {% endif %}
     </li>
 {%- endfor %}
